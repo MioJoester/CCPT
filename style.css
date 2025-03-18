@@ -1,0 +1,393 @@
+body {
+    background-color: #090A0B;
+}
+
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+.nav {
+    display: flex;
+    position:fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    top: 0;
+    left: 0;    
+    width: 100%;
+    background-color: #090A0B;
+    font-family: 'poppins', sans-serif;
+    color: #1a1a1a;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+   
+}
+
+#a {
+    font-size: medium;
+    color: #fafafa;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+   text-decoration: none;
+   transition: all 0.3s ease-in-out
+
+}
+
+
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+.idspacer {
+    width: 60px;
+}
+
+
+#searcher {
+    height: 20px;
+    width: 320px;
+    background-color: #121212;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    margin-left: 100px; 
+    padding-left: 20px;
+    margin-right:20px;
+    font-family: 'poppins', sans-serif;
+    color: #fff;
+   margin-top: 5px;
+}
+
+
+.mainframe {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 450px;
+    width: 90%;
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 12px;
+    margin-top: 130px;
+
+}
+
+#sarz {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #fff ;
+
+}
+
+
+#cname {
+    padding-top: 5px;
+    height: 20px;
+    width: 100%;
+    display: flex;
+    padding-left: 100px;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+
+}
+
+
+#gcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    width: 100%;
+    background-color: transparent;
+}
+
+
+
+
+#ez-snippet-the-goat {
+ padding-top: 10PX;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:medium;
+    font-weight: bold;
+    padding-left: 100px;
+}
+
+
+
+#marks {
+    height: 520px;
+    width: 90%;
+    background-color: transparent;
+    margin-top: 60px;
+    border-radius: 12px;
+    border: 1px solid #fff;
+}
+
+
+
+
+
+#cryptoChart {
+    height: 100%;
+    
+    width: 60%;
+}
+
+
+
+
+
+
+
+.crypto-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.crypto-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.crypto-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+html {
+        scroll-behavior: smooth;
+}
+
+
+.crypto-price {
+    margin-left: 10px;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}    
+
+
+.crypto-name {
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+.red { 
+    color: red; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+.green {
+     color: limegreen;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     font-weight: bold;
+     }
+
+
+
+#news {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    width: 90%;
+    margin-top: 55px;
+    border-radius: 21px;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.crypto-rank {
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+
+.news-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 250px;
+    width: 350px;
+    background-color: transparent;
+}
+
+
+.news-image {
+    width: 180px;
+    height: 180px;
+    margin-right: 15px;
+    border-radius: 8px;
+    background-color: blue;
+}
+
+.news-content {
+    font-size: 18px;
+    margin: 0;
+    color: yellow;
+}
+
+.news-content-p {
+    font-size: 14px;
+    color: #aaa;
+    margin: 5px 0;
+}
+
+.news-content a {
+    color: cyan;
+    text-decoration: none;
+}
+
+
+#abt {
+    height: 300px;
+    width: 89%;
+    border-radius: 12px;
+    background-color: transparent;
+    margin-top: 20px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding-top: 20px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    
+}
+
+
+.Conwell {
+    background-color: transparent;
+    
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 91%;
+    border-radius: 12px;
+    margin-top: 100px;
+
+}
+
+
+.space {
+    width: 20px;
+}
+
+
+a {
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size:large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.items {
+    height: 90px;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: xx-large;
+    border-radius: 12px;
+}
+
+
+.Nonsence {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: #fff;
+    font-size:large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+
+@media (max-width:768px) {
+
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    .crypto-item {
+        width: 98%;
+    }
+
+    .nav {
+        display: none;
+    }
+
+
+    
+
+    .mainframe {
+       
+        width: 90%;
+        margin-left: 5px;
+        
+    }
+
+
+    #abt {
+        width: 95%;
+        height: 400px;
+        font-size: 20px;
+        padding-right: none;
+    }
+
+    #marks {
+        width: 95%;
+        border: none;
+        
+    }
+
+
+    .Conwell {
+        width: 95%;
+        flex-direction: column;
+    }
+}
+
+

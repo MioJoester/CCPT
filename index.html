@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitCoin Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+</head>
+<body>
+    
+
+    <center>
+        <div class="nav">
+
+
+
+
+            
+
+
+
+
+            <a href="#" id="a">Home</a>
+                <div class="idspacer"></div>
+            <a href="#marks" id="a">Maket</a>
+                <div class="idspacer"></div>
+            <a href="#abt" id="a">About</a>
+        
+        </div>
+        
+
+
+        <div class="mainframe">
+            <div id="cname"></div>
+
+
+            <div id="gcon">
+
+                <canvas id="cryptoChart"></canvas>
+
+            </div>
+
+
+            <div id="ez-snippet-the-goat"></div>
+
+
+
+        </div>
+
+        <div id="marks">
+            <div id="leaderboard"></div>
+        </div>
+
+
+
+        <div id="abt">
+          <p> This project is a real-time BitCoin tracker that keeps you updated with live price of Bitcoin, market trends</p>
+
+          <p> Live BitcoinPrice Updates, Tracks  Bitcoin in real time </p>
+
+          <p>Market Leaderboard, View the top 10 ranked cryptos by market cap.</p>
+
+          <p>Interactive Charts, Analyze price trends with dynamic visuals.</p>
+        </div>
+
+
+       
+
+
+
+        <div class="Conwell">
+
+
+
+
+
+    
+            <div class="items">
+                <a href="https://github.com/MioJoester" target="_blank">    <i class="fab fa-github"></i>    <div class="space"></div> GitHub Repo  </a>
+            </div>
+
+
+            <div class="items">
+                <a href="https://discord.com/users/1274662028820217911" target="_blank">    <i class="fab fa-discord"></i>    <div class="space"></div> Discord   </a>
+            </div>
+
+         
+
+        </div>
+
+        <div class="Nonsence">
+            <a href="">Check out my other projects</a>
+        </div>
+    </center>
+
+</body>
+
+
+
+<script>
+
+
+const ctx = document.getElementById("cryptoChart").getContext("2d");
+let prices = []; 
+let labels = []; 
+let cryptoChart;
+
+
+async function fetchCryptoData() {
+    const url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT";
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        let price = parseFloat(data.price); 
+        console.log("Latest Bitcoin Price:", price);
+
+
+        let now = new Date().toLocaleTimeString();
+        prices.push(price); 
+        labels.push(now);
+
+   
+        if (prices.length > 20) {
+            prices.shift();
+            labels.shift();
+        }
+
+        updateChart();
+    } catch (error) {
+        console.error("Error fetching crypto data:", error);
+    }
+}
+
+
+function updateChart() {
+    if (cryptoChart) {
+        cryptoChart.destroy();
+    }
+
+    cryptoChart = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Bitcoin Price (USD)",
+                data: prices,
+                borderColor: "rgb(255, 99, 132)",
+                borderWidth: 2,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: { display: true },
+                y: { display: true }
+            }
+        }
+    });
+}
+
+
+setInterval(fetchCryptoData, 5000);
+fetchCryptoData();
+
+
+
+
+
+
+
+
+async function getTopCrypto() {
+    const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false";
+    
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        const marketContainer = document.getElementById("leaderboard"); 
+        marketContainer.innerHTML = ""; 
+        
+        data.forEach((coin, index) => {
+            const coinElement = document.createElement("div");
+            coinElement.classList.add("crypto-item");
+            coinElement.innerHTML = `
+                <div class="crypto-rank">#${index + 1}</div>
+                <img src="${coin.image}" alt="${coin.name}" class="crypto-logo">
+                <div class="crypto-info">
+                    <span class="crypto-name">${coin.name} (${coin.symbol.toUpperCase()})</span>
+                    <span class="crypto-price">$${coin.current_price.toLocaleString()}</span>
+                    <span class="crypto-change ${coin.price_change_percentage_24h < 0 ? 'red' : 'green'}">
+                        ${coin.price_change_percentage_24h.toFixed(2)}%
+                    </span>
+                </div>
+            `;
+            marketContainer.appendChild(coinElement);
+        });
+    } catch (error) {
+        console.error("Error fetching crypto data:", error);
+    }
+}
+
+
+
+
+getTopCrypto();
+setInterval(getTopCrypto, 60000); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</html>
+
+
+
