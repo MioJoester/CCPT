@@ -65,7 +65,7 @@ Internet connection for API calls
 
 No external dependencies or build tools required
 
-Running Locally
+## Running Locally
 
 
 
@@ -136,7 +136,7 @@ Extensibility: Add multi-currency support or WebSocket streaming for enhanced re
 
 
 
-Check out the project demo [here](miojoester.github.io/CCPT/)
+Check out the project demo [here](http://miojoester.github.io/CCPT/)
 
 
 
