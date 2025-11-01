@@ -272,7 +272,7 @@ html {
     border-radius: 12px;
     background-color: transparent;
     margin-top: 20px;
-    border: 1px solid #fff;
+    border: none;
     color: #fff;
     padding-top: 20px;
     text-align: left;
@@ -389,5 +389,6 @@ a {
         flex-direction: column;
     }
 }
+
 
 
